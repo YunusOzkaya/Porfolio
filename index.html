@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Kaushan+Script&family=Lato&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 10px 20px;
+            position: relative;
+            top: 0;
+            left: 0;
+            right: 0;
+            position: sticky;
+            z-index: 1;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 10px;
+            border-bottom: orange solid 5px;
+            background-color: #f2f2f2;
+
+
+        }
+
+        nav ul li {
+            margin: 0 10px;
+            font-size: 1.2rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #hire-me {
+            background-color: orange;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-left: 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        #hire-me:hover {
+            background-color: #e0e0e0;
+        }
+
+        nav ul li a {
+            color: black;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #e0e0e0;
+            border-radius: 20px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            #hire-me {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 140px;
+        }
+
+        .text-box {
+            border-top: 7px solid orange;
+            border-right: 7px solid orange;
+            padding: 30px;
+            max-width: 300px;
+            margin-top: 50px;
+        }
+
+        .text-box h2 {
+            margin-top: 0;
+        }
+
+        .slide {
+            position: relative;
+            width: var(--value);
+            height: 100%;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 10px;
+            font-size: 1.2rem;
+
+        }
+
+        .slide-label {
+            position: relative;
+            transform: translateX(-50%);
+        }
+
+        img {
+            margin-left: 20px;
+            margin-top: 50px;
+            height: 400px;
+            width: 400px;
+        }
+
+        #hakkimda,
+        #projelerim {
+            max-width: 900px;
+            margin: auto;
+
+        }
+
+        .slider {
+            width: 900px;
+            overflow: hidden;
+        }
+
+        .slider-container {
+            display: flex;
+            width: fit-content;
+            animation: slide 25s infinite;
+        }
+
+        .slider-container:hover {
+            animation-play-state: paused;
+        }
+
+        .slider-item {
+            width: 400px;
+            margin-right: 20px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            33.33% {
+                transform: translateX(-420px);
+            }
+
+            66.67% {
+                transform: translateX(-840px);
+            }
+
+            100% {
+                transform: translateX(-1260px);
+            }
+        }
+
+        .footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer ul li a i.fa-facebook-f {
+            background-color: #3b5998;
+        }
+
+        .footer ul li a i.fa-twitter {
+            background-color: #1da1f2;
+        }
+
+        .footer ul li a i.fa-linkedin-in {
+            background-color: #0077b5;
+        }
+
+        .footer ul li a i.fa-github {
+            background-color: #333;
+        }
+
+        .footer ul li a i.fa-google {
+            background-color: #db4437;
+        }
+
+        .footer ul li a i.fa-whatsapp {
+            background-color: #25d366;
+        }
+        .footer ul li a i.fa-hackerrank {
+            background-color: #10833a;
+        }
+
+        .footer ul li a i {
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 24px;
+            margin-right: 10px;
+            margin-bottom: 35px;
+        }
+
+        .footer ul li a:hover i {
+            opacity: 0.8;
+        }
+
+        .footer ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer li {
+            margin: 0 10px;
+        }
+
+        .footer a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: #fff;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .footer a:hover {
+            transform: scale(1.2);
+        }
+
+    </style>
+    <script src="https://kit.fontawesome.com/c77ff7108f.js" crossorigin="anonymous"></script>
+    <script>
+        // Yanıp sönen yazıyı belirli aralıklarla değiştirir
+        setInterval(function () {
+            var hireMe = document.getElementById('hire-me');
+            hireMe.style.visibility = (hireMe.style.visibility == 'hidden' ? '' : 'hidden');
+        }, 1000);
+
+        $(document).ready(function () {
+            var images = [
+                "images/DSCF1418.jpg",
+                "images/PP.jpg",
+                "images/pp2.jpg",
+                /*"images/PPanization-3-d-man-thinking-man-miscellaneous-child.png",
+                "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"*/
+            ];
+            var i = 0;
+            var image = $("#slideshow img");
+            setInterval(function () {
+                image.fadeOut(1000, function () {
+                    image.attr("src", images[i]);
+                    image.fadeIn(1000);
+                });
+                i++;
+                if (i == images.length) {
+                    i = 0;
+                }
+            }, 5000);
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="anasayfa">
+
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#anasayfa">Anasayfa</a></li>
+            <li><a href="#projelerim">Projelerim</a></li>
+            <li><a href="#hakkimda">Hakkımda</a></li>
+            <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+        <button id="hire-me">Beni İşe Al</button>
+    </nav>
+    <div class="container">
+        <div class="text-box">
+            <h2>Yetenek Ağacım</h2>
+            <div class="slide-bar">
+                <div class="slide" style="--value: 75%; background-color: purple; color: #fff;">
+                    <span class="slide-label">C#</span>
+                </div>
+                <div class="slide" style="--value: 50%; background-color: orange;"">
+                  <span class=" slide-label">Java</span>
+                </div>
+                <div class="slide" style="--value: 50%; background-color: lightblue; color: gray;">
+                    <span class=" slide-label">Flutter</span>
+                  </div>
+                <div class="slide" style="--value: 100%; background-color: coral;">
+                    <span class="slide-label">HTML</span>
+                </div>
+                <div class="slide" style="--value: 75%;background-color: darkblue; color: #fff;">
+                    <span class="slide-label">CSS</span>
+                </div>
+                <div class="slide" style="--value: 75%; background-color:yellow;">
+                    <span class="slide-label">Javascript</span>
+                </div>
+                <div class="slide" style="--value: 75%; background-color: cyan;">
+                    <span class="slide-label">ReactJS</span>
+                </div>
+                <div class="slide" style="--value: 50%; background-color:#1da1f2; color: #fff;">
+                    <span class="slide-label">C++</span>
+                </div>
+                <div class="slide" style="--value: 75%; background-color: green;">
+                    <span class="slide-label">SQL</span>
+                </div>
+            </div>
+        </div>
+        <div id="slideshow">
+            <img src="images/DSCF1418.jpg" alt="Resim 1">
+        </div>
+    </div>
+    <!--<p>
+            Nasuhan Yunus Özkaya, bilgisayar mühendisi ve web developer olarak freelancer çalışan biri. Anadil seviyesinde İngilizce bilmesi, 
+            dünya genelindeki müşterilerle etkileşim kurmasını oldukça kolaylaştırıyor. Uzun yıllar farklı ülkelerde yaşamış olması, 
+            ona hem zengin bir kültürel deneyim hem de gezgin bir ruh kazandırmış. İşinde başarılı olmanın yanı sıra, aynı zamanda yemek yapmayı, 
+            seyahat etmeyi ve farklı diller öğrenmeyi seven biri. Bir yandan kod yazarken, diğer yandan dünyayı keşfetmeye devam ediyor.
+        </p>-->
+    </div>
+    <div class="container" id="hakkimda">
+        <div>
+            <h1>Hakkımda</h1>
+            <p>
+                Nasuhan Yunus Özkaya, kendine has bir kişilik yapısıyla başarılı bir bilgisayar mühendisi ve web
+                geliştirici olarak karşımıza çıkıyor.
+                Uzmanlığı, teknolojik gelişmeleri yakından takip ederek yeniliklere kolaylıkla uyum sağlamasına olanak
+                tanıyor. İşindeki başarısını küresel
+                boyutta genişletmesine imkan sağlayan anadil seviyesinde İngilizce bilmesi de, onun iş dünyasındaki
+                başarısına katkıda bulunuyor.
+            </p>
+            <p>
+                Hayatının birçok döneminde farklı ülkelerde yaşamış olması, ona farklı kültürleri deneyimleme fırsatı
+                vermiş ve açık fikirli bir yapıya sahip olmasını sağlamıştır.
+                Filipinler, Polonya ve Hong Kong'da yaşamış olması, onun insanlarla iletişim kurma ve farklı kültürlere
+                saygı gösterme konusunda üstün bir yeteneğe sahip olmasına
+                katkıda bulunmuştur.
+            </p>
+            <p>
+                27 yaşında devlet memurluğuna başlayan Nasuhan ilerleyen dönemlerde kendisini mesai esaretinden
+                kurtarmak için çabalamış ve teknoloji
+                dünyasına daha da yakınlaşmıştır.
+            </p>
+            <p>
+                Nasuhan Yunus Özkaya, eğitimli bir ailenin çocuğu olarak, öğrenmeye ve gelişmeye her zaman önem veren
+                biri olmuştur.
+                Kendisini sürekli olarak geliştirme çabası, onun teknoloji ve kodlama alanındaki bilgilerini de güncel
+                tutmasına yardımcı olmaktadır.
+            </p>
+            <p>
+                Futbol, Nasuhan Yunus Özkaya'nın hayatının önemli bir parçasıdır. Galatasaray taraftarı olan Nasuhan
+                Yunus Özkaya,
+                boş zamanlarında futbol maçlarını izlemekten keyif alır.
+                Futbol, onun için sadece bir spor değil, aynı zamanda ekip çalışmasının önemini kavramasına
+                da yardımcı olmuş bir aktivitedir.
+            </p>
+            <p>
+                Nasuhan Yunus Özkaya'nın başarıları ve hayatındaki deneyimleri, hem profesyonel hem de kişisel hayatında
+                açık fikirli,
+                öğrenmeye açık ve disiplinli biri olarak öne çıkmasına olanak tanımaktadır. Teknolojiye olan merakı,
+                yeniliklere açık
+                olması ve gelişmeye olan isteği, işinde başarılı olmasını sağlarken, farklı kültürleri deneyimleme ve
+                futbol taraftarlığı
+                da ona dengeli bir yaşam sağlamaktadır.
+            </p>
+            <p>
+                Sonuç olarak, Nasuhan Yunus Özkaya, kendine özgü kişilik yapısı, işindeki uzmanlığı ve açık fikirli
+                yapıya sahip olmasıyla,
+                başarılı bir bilgisayar mühendisi ve web geliştirici olarak kariyerinde önemli başarılara imza
+                atmaktadır. Aynı zamanda,
+                hayatındaki farklı deneyimleri ve Galatasaraylılığı ile dengeli bir yaşam sürdürmektedir.
+            </p>
+            <h2>Akademik Hayatım</h2>
+            <hr />
+            <ul>
+                <li>Ankara/Çankaya Alpaslan İlköğretim Okulu </li>
+                <li>Ankara Gazi Anadolu Lisesi </li>
+                <li>Trinity College of Asia - BS Biology </li>
+                <li>Gdansk University of Technology - Med-Tech</li>
+                <li>İskenderun Teknik Üniversitesi - Bilgisayar Mühendisliği </li>
+            </ul>
+            <h2>Eğitim ve Sertifikalar</h2>
+            <hr />
+            <ul>
+                <li>Geleceği Yazanlar Başarı Sertifikası - React / Turkcell Geleceği Yazanlar</li>
+                <li>Adana Back-End Bootcamp / Kodluyoruz</li>
+                <li>Digital Transformation Specialist Certifications / Young Executive Academy</li>
+                <li>Javascript Algorithms and Data Structers / freeCodeCamp</li>
+                <li>Responsive Web Design / freeCodeCamp</li>
+                <li>Automative Summer Camp / OSD</li>
+                <li>Certified Web Professional - Site Designer (CWP) / Gazi Üniversitesi</li>
+            </ul>
+        </div>
+    </div>
+    <div id="projelerim">
+        <h1>Projelerim</h1>
+        <div class="slider">
+            <a
+                href="https://github.com/Iskenderun-Technical-University/Gorsel-Programlama-Arac-Kiralama-Otomasyonu-202523011">
+                <div class="slider-container">
+                    <div class="slider-item">
+                        <img
+                            src="https://camo.githubusercontent.com/89d9cf31b217fb59177c1a35c33f76f93d8eca88b8ca64cd3eac8031cdb9e629/68747470733a2f2f692e696d6775722e636f6d2f5539475a3132792e706e67">
+                        <h2>Araç Kiralama Otomasyonu</h2>
+                        <p>İskenderun Teknik Üniversitesi Veri Tabanı Destekli Görsel Programlama dönem projesi.</p>
+                    </div>
+            </a>
+            <a href="https://github.com/YunusOzkaya/AKIS">
+                <div class="slider-item">
+                    <img src="images/proje_akis.png">
+                    <h2>AKİS- ADLİYE KOMİSYON İŞLEMLERİ SİSTEMİ</h2>
+                    <p>AKİS Adliye Komisyon Kalemlerinde çalışan personellerin işlemlerini UYAP'tan bağımsız olarak
+                        düzenlemesine ve kategorize etmesine yarayan yardımcı bir programdır.</p>
+                </div>
+            </a>
+            <a
+                href="https://github.com/Iskenderun-Technical-University/gorsel-programlama-donem-projesi-32-ytm-hastane-otomasyonu">
+                <div class="slider-item">
+                    <img
+                        src="https://camo.githubusercontent.com/3d08ccc90a5172568c45c86af18defec27a72cd00bc70334cbe93be8b67ba804/68747470733a2f2f692e696d6775722e636f6d2f6732376f5879562e706e67">
+                    <h2>Hastane Otomasyonu</h2>
+                    <p>Doktor, hasta ve personel girişlerinin yapılabildiği; randevuların düzenlenebildiği bir
+                        otomasyon.</p>
+                </div>
+            </a>
+            <a href="https://rienalynskitchen.netlify.app/">
+                <div class="slider-item">
+                    <img src="images/proje_react.png">
+                    <h2>Rienalyn's Kitchen</h2>
+                    <p>Dünya mutfağından tariflerin kategorize edildiği, popüler tariflerin belirlendiği detaylı bir
+                        yemek tarifi sitesi.</p>
+                </div>
+            </a>
+            <a href="https://rienalynskitchen.netlify.app/">
+                <div class="slider-item">
+                    <img src="images/proje_gezegenler.png">
+                    <h2>Gezegenler</h2>
+                    <p>Uzay ile ilgili nesnelerin üzerine tıkladığınızda onların İngilizce telaffuzunu sesli olarak söyleyen uygulama.Hem Flutter bilgimi geliştirmek hem de en küçük oğlumun uzay hastalığına katkıda bulunmak için yaptığım proje. Cross-platform bir uygulama ve tamamlanmış ilk flutter projem.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    </div>
+    <div class="footer" id="iletisim">
+        <div>
+            <h1 style="padding-bottom: 10px;">İletişim</h1>
+            <ul>
+                <li><a href="https://www.facebook.com/yunus.ozkaya91" style="color:#3b5998;"><i
+                            class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://twitter.com/Jack0the0ripper" style="color:#1da1f2;"><i
+                            class="fab fa-twitter"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/nyunus-ozkaya/" style="color:#0077b5;"><i
+                            class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="https://github.com/YunusOzkaya" style="color:#333;"><i class="fab fa-github"></i></a></li>
+                <li><a href="mailto:nasuhan.yunus.ozkaya@gmail.com" style="color:#db4437;"><i
+                            class="far fa-google"></i></a></li>
+                <li><a href="https://wa.me/+905510350031" style="color:#25d366;"><i class="fab fa-whatsapp"></i></a>
+                </li>
+                <li><a href="https://www.hackerrank.com/nasuhan_yunus_o1" style="color:#10833a;"><i class="fab fa-hackerrank"></i></a>
+                </li>
+            
+            
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
